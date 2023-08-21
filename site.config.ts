@@ -9,7 +9,7 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'vv605 blog',
+  name: 'VV605 Blog',
   domain: 'vv605blog.vercel.app',
   author: 'vv605',
 
