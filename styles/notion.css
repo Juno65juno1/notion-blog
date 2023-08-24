@@ -120,9 +120,9 @@
 
 .notion-quote {
   padding: 0.2em 0.75em;
-  line-height: 1.5;
-  font-style: italic;
-  font-size: 1.2em;
+  line-height: 1.65;
+  /* font-style: italic; */
+  font-size: 1em;
   border-left: 4px solid #67bdfc;
 }
 
@@ -236,7 +236,7 @@
 .notion-link:hover {
   border-bottom-color: transparent;
 
-  background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  background-image: linear-gradient(90.68deg, #39c3df 0.26%, #8ce533 102.37%);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.1rem;
@@ -278,8 +278,8 @@
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
-    #f5b8d1 10.5%,
-    #f9bcd3 85.29%,
+    #f5c4ff 10.5%,
+    #e7a8fc 85.29%,
     var(--bg-color)
   );
 }
@@ -296,14 +296,24 @@
   );
 }
 
-.notion-red_background,
+.notion-red_background {
+  /* light red */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #f5b8d1 10.5%,
+    #f9bcd3 85.29%,
+    var(--bg-color)
+  );
+}
+
 .notion-orange_background {
   /* light red */
   background-image: linear-gradient(
     119deg,
     var(--bg-color),
-    #f5c4ff 10.5%,
-    #e7a8fc 85.29%,
+    #f3caa5 10.5%,
+    #e9b285 85.29%,
     var(--bg-color)
   );
 }
@@ -331,19 +341,87 @@
 }
 
 /* disable highlighting in dark mode */
-.dark-mode .notion-red_background,
-.dark-mode .notion-pink_background,
-.dark-mode .notion-blue_background,
-.dark-mode .notion-purple_background,
-.dark-mode .notion-teal_background,
-.dark-mode .notion-yellow_background,
-.dark-mode .notion-orange_background,
-.dark-mode .notion-brown_background,
-.dark-mode .notion-gray_background {
-  padding: 0;
+/* dark yellow */
+.dark-mode .notion-yellow_background {
+  /*   padding: 0;
   margin: 0;
   border-radius: 0;
-  background: none !important;
+  background: none !important; */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #4d4d42 10.5%,
+    #4f4c25 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-purple_background,
+.dark-mode .notion-pink_background {
+  /* dark pink */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #503a54 10.5%,
+    #62216e 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-blue_background,
+.dark-mode .notion-gray_background {
+  /* dark blue */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #314c53 10.5%,
+    #1d4f5e 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-red_background {
+  /* dark red */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #564041 10.5%,
+    #691b2d 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-orange_background {
+  /* dark orange */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #4f4134 10.5%,
+    #5c3221 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-teal_background {
+  /* dark green */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #394230 10.5%,
+    #415d27 85.29%,
+    var(--bg-color)
+  );
+}
+
+.dark-mode .notion-brown_background {
+  /* dark blue */
+  background-image: linear-gradient(
+    119deg,
+    var(--bg-color),
+    #444766 10.5%,
+    #2a276b 85.29%,
+    var(--bg-color)
+  );
 }
 
 /* if you don't want rounded page icon images, remove this */
@@ -357,8 +435,44 @@
 }
 
 .notion-header {
-  background: hsla(0, 0%, 100%, 0.8);
-  backdrop-filter: saturate(180%) blur(16px);
+  background: hsla(0, 0%, 100%, 0.5);
+  backdrop-filter: saturate(400%) blur(20px);
+
+  &:hover {
+    .up-arrow {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .notion-nav-scroll-up {
+      display: none;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .notion-nav-scroll-up {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      position: sticky;
+      margin: 0 auto;
+      top: 4rem;
+      width: 8rem;
+      height: 2.5rem;
+      /* background-color: greenyellow; */
+      cursor: pointer;
+
+      &:hover .arrow-up-icon {
+        color: #000000;
+      }
+
+      .arrow-up-icon {
+        color: #b2b2b2;
+        margin: 0.2rem;
+      }
+    }
+  }
 }
 
 .dark-mode .notion-header {
@@ -375,7 +489,7 @@
 }
 
 .notion-bookmark:hover {
-  border-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  border-image: linear-gradient(90.68deg, #39c3df 0.26%, #8ce533 102.37%);
   border-image-slice: 1;
 }
 

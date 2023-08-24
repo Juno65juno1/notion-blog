@@ -1,8 +1,10 @@
-import * as React from 'react'
+import React from 'react'
+import { useState, useEffect } from 'react'
 
 import * as types from 'notion-types'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+import { IoChevronUp } from '@react-icons/all-files/io5/IoChevronUp'
 import cs from 'classnames'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
 
@@ -12,16 +14,20 @@ import { useDarkMode } from '@/lib/use-dark-mode'
 import styles from './styles.module.css'
 
 const ToggleThemeButton = () => {
-  const [hasMounted, setHasMounted] = React.useState(false)
+  const [hasMounted, setHasMounted] = useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
 
-  React.useEffect(() => {
+  useEffect(() => {
     setHasMounted(true)
   }, [])
 
-  const onToggleTheme = React.useCallback(() => {
-    toggleDarkMode()
-  }, [toggleDarkMode])
+  const onToggleTheme = React.useCallback(
+    (e) => {
+      e.stopPropagation() //阻止冒泡
+      toggleDarkMode()
+    },
+    [toggleDarkMode]
+  )
 
   return (
     <div
@@ -37,6 +43,30 @@ export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
 }> = ({ block }) => {
   const { components, mapPageUrl } = useNotionContext()
+  const [isScrollUp, setIsScrollUp] = React.useState(false)
+
+  const handleClickHeader = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleIsScrollUp = () => {
+    const scrollHeight = document.documentElement.scrollTop
+
+    if (scrollHeight > 10) {
+      setIsScrollUp(true)
+    } else {
+      setIsScrollUp(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleIsScrollUp)
+
+    return () => window.removeEventListener('scroll', handleIsScrollUp)
+  })
 
   if (navigationStyle === 'default') {
     return <Header block={block} />
@@ -45,7 +75,7 @@ export const NotionPageHeader: React.FC<{
   return (
     <header className='notion-header'>
       <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
+        <Breadcrumbs block={block} rootOnly={false} />
 
         <div className='notion-nav-header-rhs breadcrumbs'>
           {navigationLinks
@@ -83,6 +113,12 @@ export const NotionPageHeader: React.FC<{
           {isSearchEnabled && <Search block={block} title={null} />}
         </div>
       </div>
+      {/* 滚动到顶部 */}
+      {isScrollUp && (
+        <div className='notion-nav-scroll-up' onClick={handleClickHeader}>
+          <IoChevronUp size={20} className='arrow-up-icon' />
+        </div>
+      )}
     </header>
   )
 }
