@@ -7,6 +7,7 @@ import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
 import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
+import { FaRegCopyright } from '@react-icons/all-files/fa/FaRegCopyright'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 
@@ -35,7 +36,15 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>© 2023 {config.author}</div>
+      <div
+        className={styles.copyright}
+        style={{ display: 'flex', alignItems: 'inherit' }}
+      >
+        <div style={{ marginRight: '.2rem', marginTop: '.2rem' }}>
+          <FaRegCopyright size={15} />
+        </div>
+        2023 {config.author}
+      </div>
 
       <div className={styles.settings}>
         {hasMounted && (
