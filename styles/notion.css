@@ -7,6 +7,10 @@
  * places to add some flare.
  */
 
+@import url('https://fonts.googleapis.com/css?family=Handjet');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
@@ -19,6 +23,10 @@
 .notion-page {
   padding-bottom: calc(max(5vh, 32px)) !important;
   line-height: 1.65;
+}
+
+.notion-page-has-cover {
+  padding-top: 70px;
 }
 
 .index-page {
@@ -585,5 +593,31 @@
 @media only screen and (min-width: 1300px) {
   .notion-block-77e6d8dfb73c4df19addbbd9c15e44c6 {
     display: none;
+  }
+}
+
+notion-block-ee938298b4b045bb8b396b2ed45883df > .notion-title {
+  font-family: 'Cormorant Garamond';
+  font-size: 3rem;
+}
+
+.notion-block-10ca04cd695d4c0e81b463123df32d67 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+}
+
+.notion-block-d7009850a7b6401498dad15a8f57ec1c {
+  .notion-blue_background {
+    font-family: 'Cormorant Garamond';
+    font-size: 1.3rem;
+    /* font-weight: bolder; */
+  }
+}
+
+.breadcrumbs > a {
+  .title {
+    font-family: 'Cormorant Garamond';
+    font-size: large;
+    /* font-weight: 600; */
   }
 }
