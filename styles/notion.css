@@ -7,9 +7,9 @@
  * places to add some flare.
  */
 
-@import url('https://fonts.googleapis.com/css?family=Handjet');
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap'); */
+
+@import './local_google_fonts.css';
 
 .notion {
   --notion-max-width: 720px;
@@ -596,11 +596,14 @@
   }
 }
 
-notion-block-ee938298b4b045bb8b396b2ed45883df > .notion-title {
-  font-family: 'Cormorant Garamond';
-  font-size: 3rem;
+.notion-block-ee938298b4b045bb8b396b2ed45883df {
+  .notion-title {
+    font-family: 'Cormorant Garamond';
+    font-size: 3rem;
+  }
 }
 
+/* 非主流句子 */
 .notion-block-10ca04cd695d4c0e81b463123df32d67 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
@@ -614,10 +617,12 @@ notion-block-ee938298b4b045bb8b396b2ed45883df > .notion-title {
   }
 }
 
-.breadcrumbs > a {
-  .title {
-    font-family: 'Cormorant Garamond';
-    font-size: large;
-    /* font-weight: 600; */
+.breadcrumbs {
+  .breadcrumb:first-child {
+    .title {
+      font-family: 'Cormorant Garamond';
+      font-size: large;
+      /* font-weight: 600; */
+    }
   }
 }
