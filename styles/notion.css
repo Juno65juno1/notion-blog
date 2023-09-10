@@ -653,3 +653,7 @@
     }
   }
 }
+
+.tags-page {
+  --notion-max-width: 900px;
+}
