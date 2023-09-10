@@ -626,3 +626,30 @@
     }
   }
 }
+
+/* tags 页*/
+.notion-block-4862a44814b7409fb5690762fe533244 {
+  .notion-page {
+    --notion-max-width: 900px;
+  }
+
+  .notion-collection-group {
+    margin-bottom: 4em;
+  }
+
+  .notion-gallery-grid {
+    padding-top: 5px;
+  }
+
+  .notion-collection-group-title {
+    font-size: 1.5em;
+
+    .notion-property-multi_select-item {
+      padding: 0.3em 0.3em;
+      border-radius: 0.3em;
+      height: 1.5em;
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+}

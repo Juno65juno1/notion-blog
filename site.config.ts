@@ -63,7 +63,7 @@ export default siteConfig({
     },
     {
       title: 'Tags',
-      pageId: '157887297674499989b96bda5e7d53e2'
+      pageId: '4862a44814b7409fb5690762fe533244'
     }
   ]
 })
