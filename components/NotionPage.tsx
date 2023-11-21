@@ -330,7 +330,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
         pageTitle={tagsPage && propertyToFilterName ? title : undefined}
         pageCover={pageCover}
       />
-
       <GitHubShareButton />
     </>
   )
