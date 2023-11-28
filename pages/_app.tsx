@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
 // used for rendering equations (optional)
-import 'katex/dist/katex.min.css'
+// import 'katex/dist/katex.min.css'
 import posthog from 'posthog-js'
 import { Analytics } from '@vercel/analytics/react'
 // used for code syntax highlighting (optional)

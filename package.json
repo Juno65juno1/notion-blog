@@ -10,6 +10,7 @@
     "node": ">=16"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -46,6 +47,7 @@
     "notion-utils": "^6.16.0",
     "p-map": "^5.3.0",
     "p-memoize": "^6.0.1",
+    "patch-package": "^8.0.0",
     "path": "^0.12.7",
     "posthog-js": "^1.20.2",
     "raf": "^3.4.1",
