@@ -16,6 +16,17 @@
   --notion-header-height: 54px;
 }
 
+/* 序列列表下的代码块不会超出屏幕了 */
+.notion-list {
+  max-width: 100%;
+}
+
+/* 保证序列列表下的内容缩进的距离不要太多 */
+ol:not(:has(> li)),
+ul:not(:has(> li)) {
+  padding: 0 !important;
+}
+
 .notion-frame {
   padding: 0;
 }
@@ -54,6 +65,7 @@
 .notion-header .notion-nav-header {
   max-width: 1100px;
   margin: 0 auto;
+  overflow-x: auto;
 }
 
 .notion-nav-header-rhs {
@@ -696,4 +708,20 @@
 
 .tags-page {
   --notion-max-width: 900px;
+}
+
+.notion-search .searchBar {
+  box-shadow: var(--fg-color-0) 0px 1px 0px;
+}
+
+.notion-search .noResults {
+  color: var(--fg-color-3);
+}
+
+.notion-search .noResultsDetail {
+  color: var(--fg-color-2);
+}
+
+.notion-equation.notion-equation-block {
+  align-items: center;
 }
