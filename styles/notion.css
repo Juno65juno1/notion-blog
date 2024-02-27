@@ -185,6 +185,7 @@ ul:not(:has(> li)) {
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
+  display: block;
 }
 
 .notion-callout {
