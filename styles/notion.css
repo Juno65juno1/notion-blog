@@ -21,7 +21,7 @@
   max-width: 100%;
 }
 
-/* 保证序列列表下的内容缩进的距离不要太多 aaa*/
+/* 保证序列列表下的内容缩进的距离不要太多*/
 ol:not(:has(> li)),
 ul:not(:has(> li)) {
   padding: 0 !important;
