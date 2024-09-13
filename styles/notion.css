@@ -16,7 +16,7 @@
   --notion-header-height: 54px;
 }
 
-/* 序列列表下的代码块不会超出屏幕了 test*/
+/* 序列列表下的代码块不会超出屏幕了 */
 .notion-list {
   max-width: 100%;
 }
